@@ -1,0 +1,58 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN4f6gmOBMmPLbSBqjNyYng",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Zargs1915/Hypatia/blob/main/12_05_2023\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def make_uppercase(word):\n",
+        "    return word.upper()\n",
+        "\n",
+        "    my_string = \"something very long\"\n",
+        "substring = my_string[9:20]\n",
+        "print(substring)"
+      ],
+      "metadata": {
+        "id": "-oq7Gh65hZaK",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "f960e2fb-f09f-427c-804a-cccc85a2e5c7"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            " very long\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
