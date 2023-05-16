@@ -1,0 +1,103 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN5sVGggEMAaNozZrpDN3p/",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Zargs1915/Hypatia/blob/main/Move\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def print_world(world):\n",
+        "    for row in world:\n",
+        "        for cell in row:\n",
+        "            print(cell, end='')\n",
+        "        print()\n",
+        "\n",
+        "def move_left(player, world):\n",
+        "    x, y = player\n",
+        "    if y > 0:\n",
+        "        world[x][y], world[x][y-1] = world[x][y-1], world[x][y]\n",
+        "        player = x, y-1\n",
+        "    return player\n",
+        "\n",
+        "def move_right(player, world):\n",
+        "    x, y = player\n",
+        "    if y < len(world[0])-1:\n",
+        "        world[x][y], world[x][y+1] = world[x][y+1], world[x][y]\n",
+        "        player = x, y+1\n",
+        "    return player\n",
+        "\n",
+        "def move_up(player, world):\n",
+        "    x, y = player\n",
+        "    if x > 0:\n",
+        "        world[x][y], world[x-1][y] = world[x-1][y], world[x][y]\n",
+        "        player = x-1, y\n",
+        "    return player\n",
+        "\n",
+        "def move_down(player, world):\n",
+        "    x, y = player\n",
+        "    if x < len(world)-1:\n",
+        "        world[x][y], world[x+1][y] = world[x+1][y], world[x][y]\n",
+        "        player = x+1, y\n",
+        "    return player\n",
+        "\n",
+        "def play_game():\n",
+        "    world = [\n",
+        "        ['-', '-', '-', '-', '-'],\n",
+        "        ['-', '-', '-', '-', '-'],\n",
+        "        ['-', '-', '-', '-', '-'],\n",
+        "        ['-', '-', '-', '-', '-'],\n",
+        "        ['-', '-', '-', '-', '-']\n",
+        "    ]\n",
+        "    player = 2, 2\n",
+        "    world[player[0]][player[1]] = 'P'\n",
+        "\n",
+        "    while True:\n",
+        "        print_world(world)\n",
+        "        choice = input(\"Enter your move: \")\n",
+        "        \n",
+        "        if choice == 'q':\n",
+        "            break\n",
+        "        elif choice == 'w':\n",
+        "            player = move_up(player, world)\n",
+        "        elif choice == 's':\n",
+        "            player = move_down(player, world)\n",
+        "        elif choice == 'a':\n",
+        "            player = move_left(player, world)\n",
+        "        elif choice == 'd':\n",
+        "            player = move_right(player, world)\n",
+        "        else:\n",
+        "            print(\"Invalid move!\")\n",
+        "\n",
+        "play_game()"
+      ],
+      "metadata": {
+        "id": "6H7obb4Pqg03"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
